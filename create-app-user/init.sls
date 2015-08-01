@@ -1,7 +1,7 @@
 include:
   - github
 
-{% set app_user = pillar.get('app_user', pillar['login_user']) %}
+{% set app_user = pillar.get('app_user', pillar.get('login_user', 'root')) %}
 
 create-app-user:
   group.present:
